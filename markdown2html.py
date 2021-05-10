@@ -10,14 +10,14 @@ if __name__ == "__main__":
         exit(1)
     try:
         with open(argv[1], "r") as f1, open(argv[2], "w") as f2:
-            f1_l = f1.readlines()
-            for line in f1_l:
+            f1_lines = f1.readlines()
+            for line in f1_lines:
                 if line[0] == "#":
-                    hlvl = len(line) - len(line.lstrip("#"))
+                    hlevel = len(line) - len(line.lstrip("#"))
                     l = line.strip(" #\n")
-                    f2.write("<h{}>".format(hlvl) + l + "</h{}>".format(hlvl) + "\n")
+                    f2.write("<h{}>".format(hlevel) + l + "</h{}>".format(hlevel) + "\n")
                 else:
-                    f2.write(line)
+                    f2.write(line)    
         exit(0)
     except IOError:
         stderr.write("Missing {}\n".format(argv[1]))
