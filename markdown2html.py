@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Copy and format file form arg 1 and name with arg 2 value """
+""" Copy and format file form arg 1 and name it with arg 2 value """
 from sys import argv, stderr
 
 
